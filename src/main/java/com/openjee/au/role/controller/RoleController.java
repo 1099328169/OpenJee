@@ -25,7 +25,7 @@ public class RoleController {
    
    @RequestMapping("/getAllRole") 
    public @ResponseBody List<Role> getAllRole(){
-	   return roleService.getAll();
+	   return roleService.getAll(); 
    }
    
   
