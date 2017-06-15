@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.openjee.au.role.dao.RoleDao">
+	<resultMap id="BaseResultMap" type="com.openjee.au.role.model.Role">
+		<result column="roleid" property="roleid" jdbcType="INTEGER"/>
+		<result column="rolecode" property="rolecode" jdbcType="VARCHAR"/>
+	</resultMap>
+	<sql id="Base_Column_List">
+		roleid,rolecode
+	</sql>
+	<select id="getAll" resultMap="BaseResultMap" >
+		select *  
+		from au_role
+	</select>
+</mapper>  

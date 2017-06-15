@@ -1,0 +1,46 @@
+/*	#div_tabs ul{
+				width: auto;
+				height: auto;
+			}*/
+				#div_tabs li {
+					list-style: none;
+					margin-left: 1px;
+					text-align: center;
+				}
+				
+				#div_tabs li>a {
+					border-top-left-radius: 3px;
+					border-top-right-radius: 3px;
+					display: block;
+					background: #ededed;
+					width: 80px;
+					height: 30px;
+					line-height: 30px;
+					border: 1px solid #d3d3d3;
+				}
+				#div_tabs li>a:hover{
+					border: 1px solid #AAAAAA;
+					background: #dadada;
+					cursor: pointer;
+				}
+				#div_tabs li {
+					float: left;
+				}
+				#div_tabs ul li a span{
+					cursor: pointer;
+				}
+				#main_frame {
+					clear: both;
+					overflow: hidden;
+				}
+				.tab_selected {
+					background: white !important;
+					border: 1px solid #aaaaaa;
+				}
+
+				.tab_close{ float:right;  position:relative; right:2px; top:-10px;}
+
+				iframe{
+					width: 98%;
+					height: 500px;
+				}
