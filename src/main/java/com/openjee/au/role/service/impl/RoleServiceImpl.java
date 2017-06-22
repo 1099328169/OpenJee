@@ -17,11 +17,62 @@ public class RoleServiceImpl implements RoleService {
 	
 	Log logger = LogFactory.getLog(RoleServiceImpl.class);
 	
-    @Resource  
-    private RoleDao userDao;
-
+    @Resource(name = "roleDao")
+    private RoleDao roleDao;
+    
+    /**
+     * 获取角色列表
+     */
 	@Override
 	public List<Role> getAll() {
-		return userDao.getAll();
+		return roleDao.getAll();
+	}
+	
+	/**
+	 * 保存角色
+	 */
+	@Override
+	public void saveRole(Role role) {
+		roleDao.saveRole(role);
+	}
+	
+	/**
+	 * 更新角色
+	 */
+	@Override
+	public void updateRole(Role role) {
+		roleDao.updateRole(role);
+	}
+	
+	/**
+	 * 根据主键获取角色对象
+	 */
+	@Override
+	public Role getRoleById(String roleId) {
+		
+		return roleDao.getRoleById(roleId);
+	}
+	
+	/**
+	 * 判断角色编码是否存在
+	 */
+	@Override
+	public boolean roleCodeIsExist(String roleCode) {
+		Role role = roleDao.getRoleByCode(roleCode);
+		if(role != null){
+			return false;
+		}
+		return true;
+	}
+	
+	/**
+	 * 根据主键删除角色
+	 */
+	@Override
+	public void deleteRoleByIds(String roleIds) {
+		String[] ids=roleIds.split(",");
+		for(String roleId :ids){
+			roleDao.deleteRoleById(roleId);
+		}
 	}  
 }  

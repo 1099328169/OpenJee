@@ -12,4 +12,29 @@
 		select *  
 		from au_role
 	</select>
+	
+	<select id="getRoleById" resultType="com.openjee.au.role.model.Role">
+		select * from au_role where roleid=#{roleId}
+	</select>
+	
+	<select id="getRoleByCode" resultType="com.openjee.au.role.model.Role">
+		select * from au_role where rolecode=#{roleCode}
+	</select>
+	
+	<insert id="saveRole" parameterType="com.openjee.au.role.model.Role">
+		<selectKey keyProperty="roleid" resultType="java.lang.String" order="BEFORE">
+	    	select replace(uuid(),'-','') from dual
+	    </selectKey>
+		insert into au_role(roleid,rolecode,rolename)  
+             values(#{roleid},#{rolecode},#{rolename})  
+	</insert>
+	
+	<update id="updateRole" parameterType="com.openjee.au.role.model.Role">
+		update au_role set rolecode=#{rolecode},rolename=#{rolename} where roleid=#{roleid}
+	</update>
+	
+	<delete id="deleteRoleById" parameterType="java.lang.String">
+		delete from au_role where roleid=#{roleId}
+	</delete>
+	
 </mapper>  
