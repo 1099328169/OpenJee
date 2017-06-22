@@ -7,12 +7,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/static/css/resmenu.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/static/css/tab.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/static/css/lhgdialog/default.css">
 
 <script src="<%=request.getContextPath() %>/static/js/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script src="<%=request.getContextPath() %>/static/js/jquery.resmenu.js" type="text/javascript"></script>
 <script src="<%=request.getContextPath() %>/static/js/tool.js" type="text/javascript"></script>
 <script src="<%=request.getContextPath() %>/static/js/index.js" type="text/javascript"></script>
 <script src="<%=request.getContextPath() %>/static/js/Grid.js" type="text/javascript"></script>
+<script src="<%=request.getContextPath() %>/static/js/lhgdialog.min.js" type="text/javascript"></script>
 <title>Insert title here</title>
 <script>
 	$(document).ready(function() {
@@ -28,7 +30,7 @@
                 <li>
                     <a href="#">权限管理</a>
                     <ul>
-                        <li><a href="#" onclick="Tab.addTab('角色管理',1,'/role/toRoleList.action')">角色管理</a></li>
+                        <li><a href="#" onclick="Tab.addTab('角色管理','tab_iframe_role','/role/toRoleList.action')">角色管理</a></li>
                         <li><a href="#">菜单管理</a></li>
                         <li><a href="#">应用管理</a></li>
                     </ul>
