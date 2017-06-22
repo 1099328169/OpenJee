@@ -20,6 +20,22 @@
 
 $(document).ready(function(){
 	initForm();
+	var bind_name = 'input';
+	//兼容IE浏览器
+    if(!!window.ActiveXObject || "ActiveXObject" in window){
+	   if(navigator.userAgent.indexOf("MSIE 8.0")>0||navigator.userAgent.indexOf("MSIE 7.0")>0){
+		  //兼容IE8 或者IE7
+		   bind_name = 'propertychange';
+	    }
+		   $('#rolecode').bind(bind_name, function(){
+			   onKeyups();
+			})
+    }else{
+   	 //兼容火狐浏览器
+		 $("#rolecode").bind("keyup",function (){
+			 onKeyups();
+		 }) ;
+    }
 });
 
 function initForm(){
@@ -27,9 +43,9 @@ function initForm(){
 	$("#roleid").val(roleid);
 	if(roleid!=""){
 		AjaxJson('/role/getRoleById.action',{roleId:roleid},function(role){
-			//$("#rolenames").val(role.rolename);
+			$("#oldcode").val(role.rolecode);
 			SetForm(role,"#roleEditForm");
-		});		
+		});
 	}
 }
 //保存角色
@@ -40,12 +56,14 @@ function saveRole(){
 		rolename : $("#rolename").val()
 	};
 	var roleJson = $.toJSON( role );
-	AjaxJson("/role/saveRole.action",{roleJson:roleJson},
-			function(result){
-			tipDialog(result.message, "0.5", 1);
-			top.frames[tabiframeId()].GetGrid();
-			closeDialog();
-	});
+	if($("#errorlab").text()==""){
+		AjaxJson("/role/saveRole.action",{roleJson:roleJson},
+				function(result){
+				tipDialog(result.message, "0.5", 1);
+				top.frames[tabiframeId()].GetGrid();
+				closeDialog();
+		});
+	}
 }
 
 //获取iframe的对应name
@@ -55,12 +73,25 @@ function tabiframeId() {
     return id;
 }
 
-	
+// 判断编码是否存在
+function onKeyups(){
+	if($("#rolecode").val()!=$("#oldcode").val()){
+		 AjaxJson('/role/roleCodeIsExist.action',{roleCode:$("#rolecode").val()},function(result){
+			  if(result){
+				  $("#errorlab").text("");
+			  }else{
+				  $("#errorlab").text("编码已存在");
+			  }
+		 });
+	}
+}
+
 </script>
 </head>
 <body>
 	<form id="roleEditForm"	action="<%=request.getContextPath()%>/role/saveRole.action"	method="post">
 		<input type="hidden" name="roleid" id="roleid">
+		<input type="hidden" name="oldcode" id="oldcode">
 		<div id="editWindow" class="Form_Table">
 		     <table border="0" cellpadding="0" cellspacing="1">	        
 		         <tr>
