@@ -1,0 +1,285 @@
+
+body {
+}
+.ui_lock_scroll {
+}
+.ui_lock_scroll body {
+    overflow: hidden;
+}
+.ui_content, .ui_title, .ui_buttons input {
+    font: 12px/1.333 tahoma,arial,ËÎÌו,sans-serif;
+}
+table.ui_border, table.ui_dialog {
+    border-spacing: 0;
+    width: auto;
+}
+.ui_border td, .ui_dialog td {
+    padding: 0;
+}
+.ui_dialog {
+    background: #fff none repeat scroll 0 0;
+}
+.ui_title {
+    -moz-user-select: none;
+    background: #ddd none repeat scroll 0 0;
+    cursor: move;
+    display: block;
+    overflow: hidden;
+    padding: 0 100px 0 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ui_title_buttons {
+    cursor: pointer;
+    font-size: 0;
+    letter-spacing: -0.5em;
+    position: absolute;
+}
+.ui_main {
+    min-width: 6em;
+    text-align: center;
+}
+.ui_content {
+    display: inline-block;
+    text-align: left;
+}
+.ui_content.ui_state_full {
+    display: block;
+    height: 100%;
+    margin: 0;
+    padding: 0 !important;
+    width: 100%;
+}
+.ui_content.ui_state_full iframe {
+    border-radius: 0 0 5px 5px;
+}
+.ui_loading {
+    background: rgba(0, 0, 0, 0) url("icons/loading.gif") no-repeat scroll center center;
+    height: 32px;
+    overflow: hidden;
+    text-align: left;
+    text-indent: -9999em;
+    width: 96px;
+}
+.ui_icon_bg {
+    margin: 20px 0 20px 15px;
+}
+.ui_min, .ui_max, .ui_close, .ui_res {
+    display: inline-block;
+    font-family: tahoma,arial,ËÎÌו,sans-serif;
+    letter-spacing: normal;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+}
+.ui_min b, .ui_max b, .ui_res_t, .ui_res_b {
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+}
+.ui_close {
+    font-weight: 500;
+    outline: 0 none;
+    text-decoration: none;
+}
+.ui_close:hover {
+    text-decoration: none;
+}
+.ui_state_tips .ui_main {
+    min-width: 3em;
+}
+.ui_state_tips .ui_content {
+    margin-top: -2px;
+    padding: 8px 10px !important;
+}
+.ui_state_tips .ui_icon_bg {
+    margin: 5px 0 6px 9px;
+}
+.ui_state_tips .ui_title, .ui_state_tips .ui_title_buttons, .ui_res {
+    display: none;
+}
+#ldg_lockmask {
+    background: #dce2f1 none repeat scroll 0 0;
+    opacity: 0.6;
+}
+.ui_inner {
+    border: 1px solid #999;
+}
+.ui_border {
+    border-radius: 4px;
+}
+.ui_lt, .ui_rt, .ui_lb, .ui_rb {
+    display: block;
+    height: 6px;
+    width: 6px;
+}
+.ui_lt {
+    border-radius: 4px 0 0;
+}
+.ui_rt {
+    border-radius: 0 4px 0 0;
+}
+.ui_rb {
+    border-radius: 0 0 4px;
+}
+.ui_lb {
+    border-radius: 0 0 0 4px;
+}
+.ui_lt, .ui_rt, .ui_l, .ui_r, .ui_lb, .ui_b, .ui_t, .ui_rb {
+    background: rgba(102, 102, 102, 0.3) none repeat scroll 0 0;
+}
+.ui_title_bar {
+    border-bottom: 1px solid #317ebd;
+    height: 100%;
+    position: relative;
+}
+.ui_title {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #46a0e1, #3280bf) repeat scroll 0 0;
+    border-bottom: 1px solid #6da6e1;
+    color: #ddd;
+    font-size: 14px;
+    font-weight: bold;
+    height: 26px;
+    line-height: 26px;
+    padding-left: 7px;
+}
+.ui_state_focus .ui_title {
+    color: #fff;
+    text-shadow: 0 1px 0 #333;
+}
+.ui_state_drag .ui_title {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #3280bf, #46a0e1) repeat scroll 0 0;
+    border-bottom: 1px solid #82bee6;
+    text-shadow: 0 -1px 0 #333;
+}
+.ui_title_buttons {
+    right: 5px;
+    top: 3px;
+}
+.ui_min, .ui_max, .ui_close, .ui_res {
+    color: #fff;
+    font-size: 22px;
+    height: 22px;
+    line-height: 18px;
+    width: 22px;
+}
+.ui_min_b {
+    border-bottom: 2px solid #fff;
+    height: 2px;
+    left: 5px;
+    top: 10px;
+    width: 12px;
+}
+.ui_max_b {
+    height: 7px;
+    left: 5px;
+    top: 5px;
+    width: 10px;
+}
+.ui_res_t, .ui_res_b {
+    height: 5px;
+    left: 3px;
+    top: 8px;
+    width: 10px;
+}
+.ui_res_b {
+    left: 6px;
+    top: 4px;
+}
+.ui_res_t, .ui_res_b, .ui_max_b {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #fff;
+    border-image: none;
+    border-style: solid;
+    border-width: 3px 1px 1px;
+}
+.ui_res_t {
+    background: #3d8cce none repeat scroll 0 0;
+}
+.ui_min:hover b, .ui_max:hover b, .ui_res:hover b {
+    border-color: #555;
+}
+.ui_close {
+    vertical-align: baseline;
+}
+.ui_close:hover, .ui_close:focus {
+    color: #c93333;
+}
+.ui_buttons {
+    background-color: #f6f6f6;
+    border-top: 1px solid #dadee5;
+    padding: 4px 8px;
+    text-align: right;
+    white-space: nowrap;
+}
+.ui_buttons input::-moz-focus-inner {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+.ui_buttons input {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #fafafa, #e4e4e4) repeat scroll 0 0;
+    border: 1px solid #999;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7), 0 -1px 0 rgba(0, 0, 0, 0.09);
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    height: 23px;
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-left: 6px;
+    overflow: visible;
+    padding: 3px 10px 3px 12px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+    transition: box-shadow 0.2s linear 0s;
+}
+.ui_buttons input:focus {
+    box-shadow: 0 0 3px #0e78c9;
+    outline: 0 none;
+}
+.ui_buttons input:hover {
+    border-color: #666;
+    box-shadow: none;
+    color: #000;
+}
+.ui_buttons input:active {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #fafafa, #e4e4e4) repeat scroll 0 0;
+    border-color: #666;
+}
+.ui_buttons input[disabled] {
+    background: #ddd none repeat scroll 0 0;
+    border: 1px solid #999;
+    box-shadow: none;
+    color: #666;
+    cursor: default;
+    opacity: 0.5;
+}
+input.ui_state_highlight {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #33bbee, #2288cc) repeat scroll 0 0;
+    border: 1px solid #1c6a9e;
+    color: #fff;
+    text-shadow: 0 -1px 1px #1c6a9e;
+}
+input.ui_state_highlight:hover {
+    border-color: #555;
+    color: #fff;
+}
+input.ui_state_highlight:active {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #33bbee, #2288cc) repeat scroll 0 0;
+    border-color: #1c6a9e;
+}
+.ui_state_tips, .ui_state_tips .ui_inner, .ui_state_tips .ui_title_bar {
+    border: 0 none;
+    box-shadow: none;
+}
+.ui_state_tips .ui_lt, .ui_state_tips .ui_rt, .ui_state_tips .ui_lb, .ui_state_tips .ui_rb {
+    height: 5px;
+    width: 5px;
+}
