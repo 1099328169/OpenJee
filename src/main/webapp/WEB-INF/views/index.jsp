@@ -15,7 +15,6 @@
 <script src="<%=request.getContextPath() %>/static/js/index.js" type="text/javascript"></script>
 <script src="<%=request.getContextPath() %>/static/js/Grid.js" type="text/javascript"></script>
 <script src="<%=request.getContextPath() %>/static/js/lhgdialog.min.js" type="text/javascript"></script>
-<title>Insert title here</title>
 <script>
 	$(document).ready(function() {
 		Tab.init();
@@ -30,7 +29,7 @@
                 <li>
                     <a href="#">权限管理</a>
                     <ul>
-                        <li><a href="#" onclick="Tab.addTab('角色管理','tab_iframe_role','/role/toRoleList.action')">角色管理</a></li>
+                        <li><a href="#" onclick="Tab.addTab('角色管理','1001','/role/toRoleList.action')">角色管理</a></li>
                         <li><a href="#">菜单管理</a></li>
                         <li><a href="#">应用管理</a></li>
                     </ul>
